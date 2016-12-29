@@ -51,7 +51,7 @@ arg.on('run', () => {
   const spawn = require('child_process').spawn;
 	const ex = spawn('npm', ['start']);
 	ex.stdout.on('data', (data) => {
-		console.log(data)
+		console.log(`${data}`);
 	});
 
 	ex.stderr.on('data', (data) => {
