@@ -1,7 +1,7 @@
-var arg = require('argcon')
+const arg = require('argcon')
 const gitclone = require('gitclone')
-var sb = require('spellbook')
-arg.on('new', function (res) {
+const sb = require('spellbook')
+arg.on('new', res => {
 	if (!sb.empty(sb.get(res, '0')) && sb.isString(res[0])) {
     	gitclone('warlock/nodejs-api-rest-tester', { dest: res[0] }, () => {
     		console.log(`RxApi downloaded in '${res[0]}' folder`)
@@ -24,16 +24,16 @@ arg.on('new', function (res) {
 
 			ex.on('close', (code) => {
 			});
-    	})
+    		});
 	} else console.log('Pease include the name of project or directory')
 })
 
-arg.on('run', function () {
+arg.on('run', () => {
     const spawn = require('child_process').spawn;
 	const ex = spawn('npm', ['start'], { cwd : `./${res[0]}/`});
 	ex.stdout.on('data', (data) => {
 
-	})
+	});
 
 	ex.stderr.on('data', (data) => {
 		console.log(`stderr: ${data}`);
