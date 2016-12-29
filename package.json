@@ -1,6 +1,6 @@
 {
   "name": "rxapi",
-  "version": "0.0.4",
+  "version": "0.0.7",
   "description": "Generate fast API REST and WEBSOCKET for Dummy testing",
   "main": "./bin/index.js",
   "bin": {
@@ -22,6 +22,7 @@
     "ws",
     "test"
   ],
+  "preferGlobal": "true",
   "author": "Josep Subils Rigau <josep@spellbook.io> (http://spellbook.io)",
   "license": "MIT",
   "bugs": {
