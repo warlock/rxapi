@@ -4,15 +4,20 @@ const sb = require('spellbook')
 const arg = require('argcon')
 const pkg = require('../package.json');
 
-arg.alone(res => {
+function help() {
 	console.log(`
 RxApi ${pkg.version} - ${pkg.description}
 Usage:
-  new project    Generate new project in new folder
-  run            Run API server
+	new project    Generate new project in new folder
+	run            Run API server
+	help           Show this message
 
-${pkg.license} License - ${pkg.author} (${pkg.author.email})
+${pkg.license} License - ${pkg.author}
 `);
+}
+
+arg.alone(res => {
+	help()
 })
 
 arg.on('new', res => {
@@ -42,9 +47,13 @@ arg.on('new', res => {
 	} else console.log('Pease include the name of project or directory')
 })
 
+arg.on('help', () => {
+	help()
+})
+
 arg.on('run', () => {
   const spawn = require('child_process').spawn;
-	const ex = spawn('npm', ['start'], { cwd : `./${res[0]}/`});
+	const ex = spawn('npm', ['start']);
 	ex.stdout.on('data', (data) => {
 
 	});
