@@ -1,8 +1,9 @@
-var gitclone = require('gitclone')
-var sb = require('spellbook')
-var argc = require('argcon')
+#!/usr/bin/env node
+const gitclone = require('gitclone')
+const sb = require('spellbook')
+const arg = require('argcon')
 
-argc.on('new', res => {
+arg.on('new', res => {
 	if (!sb.empty(sb.get(res, '0')) && sb.isString(res[0])) {
     gitclone('warlock/nodejs-api-rest-tester', { dest: res[0] }, () => {
     	console.log(`RxApi downloaded in '${res[0]}' folder`)
@@ -29,7 +30,7 @@ argc.on('new', res => {
 	} else console.log('Pease include the name of project or directory')
 })
 
-argc.on('run', () => {
+arg.on('run', () => {
   const spawn = require('child_process').spawn;
 	const ex = spawn('npm', ['start'], { cwd : `./${res[0]}/`});
 	ex.stdout.on('data', (data) => {
