@@ -1,6 +1,6 @@
 {
   "name": "rxapi",
-  "version": "0.0.2",
+  "version": "0.0.4",
   "description": "Generate fast API REST and WEBSOCKET for Dummy testing",
   "main": "./bin/index.js",
   "bin": {
