@@ -17,6 +17,7 @@ ${pkg.license} License - Josep Subils Rigau <josep@spellbook.io>
 
 arg.on('new', res => {
 	if (!sb.empty(sb.get(res, '0')) && sb.isString(res[0])) {
+		console.log(`Start downloading project in '${res[0]}' folder.`)
     gitclone('warlock/nodejs-api-rest-tester', { dest: res[0] }, () => {
     	console.log(`RxApi downloaded in '${res[0]}' folder`)
     	const spawn = require('child_process').spawn;
@@ -50,7 +51,7 @@ arg.on('run', () => {
   const spawn = require('child_process').spawn;
 	const ex = spawn('npm', ['start']);
 	ex.stdout.on('data', (data) => {
-
+		console.log(data)
 	});
 
 	ex.stderr.on('data', (data) => {
