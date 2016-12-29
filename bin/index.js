@@ -2,6 +2,18 @@
 const gitclone = require('gitclone')
 const sb = require('spellbook')
 const arg = require('argcon')
+const pkg = require('../package.json');
+
+arg.alone(res => {
+	console.log(`
+RxApi ${pkg.version} - ${pkg.description}
+Usage:
+  new project    Generate new project in new folder
+  run            Run API server
+
+${pkg.license} License - ${pkg.author} (${pkg.author.email})
+`);
+})
 
 arg.on('new', res => {
 	if (!sb.empty(sb.get(res, '0')) && sb.isString(res[0])) {
