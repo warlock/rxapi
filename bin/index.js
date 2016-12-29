@@ -15,10 +15,6 @@ ${pkg.license} License - Josep Subils Rigau <josep@spellbook.io>
 `);
 }
 
-arg.alone(res => {
-	help()
-})
-
 arg.on('new', res => {
 	if (!sb.empty(sb.get(res, '0')) && sb.isString(res[0])) {
     gitclone('warlock/nodejs-api-rest-tester', { dest: res[0] }, () => {
@@ -46,11 +42,9 @@ arg.on('new', res => {
 	} else console.log('Pease include the name of project or directory')
 })
 
-/*
 arg.on('help', () => {
 	help()
 })
-*/
 
 arg.on('run', () => {
   const spawn = require('child_process').spawn;
@@ -65,4 +59,8 @@ arg.on('run', () => {
 
 	ex.on('close', (code) => {
 	});
+})
+
+arg.alone(res => {
+	help()
 })
