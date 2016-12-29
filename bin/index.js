@@ -10,9 +10,8 @@ RxApi ${pkg.version} - ${pkg.description}
 Usage:
 	new project    Generate new project in new folder
 	run            Run API server
-	help           Show this message
 
-${pkg.license} License - ${pkg.author}
+${pkg.license} License - Josep Subils Rigau <josep@spellbook.io>
 `);
 }
 
@@ -47,9 +46,11 @@ arg.on('new', res => {
 	} else console.log('Pease include the name of project or directory')
 })
 
+/*
 arg.on('help', () => {
 	help()
 })
+*/
 
 arg.on('run', () => {
   const spawn = require('child_process').spawn;
