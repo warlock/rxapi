@@ -10,6 +10,7 @@ RxApi ${pkg.version} - ${pkg.description}
 Usage:
 	new project    Generate new project in new folder
 	run            Run API server
+	help           Show this message
 
 ${pkg.license} License - Josep Subils Rigau <josep@spellbook.io>
 `);
@@ -34,7 +35,7 @@ arg.on('new', res => {
 	./${res[0]}/scaffold/http.js     API REST Generator
 	./${res[0]}/scaffold/socket.js   WEBSOCKET Generator
 	./${res[0]}/schema.json          JSON Data model schema
-	./${res[0]}/config.json          Server configuration file
+	./${res[0]}/conf.json            Server configuration file
 
   ------------------------
 
