@@ -17,24 +17,39 @@ ${pkg.license} License - Josep Subils Rigau <josep@spellbook.io>
 
 arg.on('new', res => {
 	if (!sb.empty(sb.get(res, '0')) && sb.isString(res[0])) {
-		console.log(`Start downloading project in '${res[0]}' folder.`)
+		console.log(`RxApi: Start downloading project in '${res[0]}' folder.`)
     gitclone('warlock/nodejs-api-rest-tester', { dest: res[0] }, () => {
-    	console.log(`RxApi downloaded in '${res[0]}' folder`)
+    	console.log(`RxApi: Successful download in '${res[0]}' folder`)
     	const spawn = require('child_process').spawn;
 			const ex = spawn('npm', ['i'], { cwd : `./${res[0]}/`});
 
 			ex.stdout.on('data', (data) => {
-				console.log(`${data}`);
+				process.stdout.write(`${data}`);
 				console.log(`
 
 	RxApi Instaled! Welcome!
 	------------------------
-	Please 'cd ${res[0]}' and run server using 'rxapi run'
+
+	Principal documents:
+	./${res[0]}/scaffold/http.js     API REST Generator
+	./${res[0]}/scaffold/socket.js   WEBSOCKET Generator
+	./${res[0]}/schema.json          JSON Data model schema
+	./${res[0]}/config.json          Server configuration file
+
+  ------------------------
+
+  Development documentation:
+	https://github.com/warlock/nodejs-api-rest-tester
+
+	------------------------
+
+	Please 'cd ${res[0]}' and run server using 'rxapi run' or 'npm start'
+
 `);
 			});
 
 			ex.stderr.on('data', (data) => {
-				console.log(`stderr: ${data}`);
+				process.stdout.write(`${data}`);
 			});
 
 			ex.on('close', (code) => {
@@ -51,11 +66,11 @@ arg.on('run', () => {
   const spawn = require('child_process').spawn;
 	const ex = spawn('npm', ['start']);
 	ex.stdout.on('data', (data) => {
-		console.log(`${data}`);
+		process.stdout.write(`${data}`);
 	});
 
 	ex.stderr.on('data', (data) => {
-		console.log(`stderr: ${data}`);
+		process.stderr.write(`${data}`);
 	});
 
 	ex.on('close', (code) => {
