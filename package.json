@@ -1,6 +1,6 @@
 {
   "name": "rxapi",
-  "version": "0.0.15",
+  "version": "0.0.16",
   "description": "Generate fast API REST and WEBSOCKET for Dummy testing",
   "main": "./bin/index.js",
   "bin": {
@@ -28,7 +28,7 @@
   "bugs": {
     "url": "https://github.com/warlock/rxapi/issues"
   },
-  "homepage": "http://www.spellbook.io",
+  "homepage": "https://warlock.gitbooks.io/rxapi/content/",
   "dependencies": {
     "argcon": "0.0.4",
     "gitclone": "^2.0.0",

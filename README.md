@@ -1,5 +1,7 @@
 # rxapi
 >Generate fast API REST and WEBSOCKET for Dummy testing
+>
+>https://warlock.gitbooks.io/rxapi/content/
 
 ##Install
 ```sh
@@ -18,7 +20,8 @@ rxapi run
 ```
 
 ##API DOCUMENTATION:
-[Developer documentation](https://github.com/warlock/nodejs-api-rest-tester)
+[Documentation](https://warlock.gitbooks.io/rxapi/content/)
+[API Github](https://github.com/warlock/nodejs-api-rest-tester)
 
 ## License
 The MIT License (MIT)
