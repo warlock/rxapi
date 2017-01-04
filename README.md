@@ -1,4 +1,4 @@
-# rxapi
+# RxAPI
 >Generate fast API REST and WEBSOCKET for Dummy testing
 >
 >https://warlock.gitbooks.io/rxapi/content/
@@ -21,6 +21,7 @@ rxapi run
 
 ##API DOCUMENTATION:
 [Documentation](https://warlock.gitbooks.io/rxapi/content/)
+
 [API Github](https://github.com/warlock/nodejs-api-rest-tester)
 
 ## License
