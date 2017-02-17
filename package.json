@@ -32,6 +32,6 @@
   "dependencies": {
     "argcon": "0.0.4",
     "gitclone": "^2.0.0",
-    "spellbook": "0.0.94"
+    "spellbook": "0.1.8"
   }
 }
