@@ -14,7 +14,7 @@ Download in folder and install the dependencies:
 rxapi new project
 ```
 
-##Run the api
+## Run the api
 ```sh
 rxapi run
 ```
