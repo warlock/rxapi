@@ -3,12 +3,12 @@
 >
 >https://warlock.gitbooks.io/rxapi/content/
 
-##Install
+## Install
 ```sh
 sudo npm i rxapi -g
 ```
 
-##Start new api
+## Start new api
 Download in folder and install the dependencies:
 ```sh
 rxapi new project
@@ -19,7 +19,7 @@ rxapi new project
 rxapi run
 ```
 
-##API DOCUMENTATION:
+## API DOCUMENTATION:
 [Documentation](https://warlock.gitbooks.io/rxapi/content/)
 
 [API Github](https://github.com/warlock/nodejs-api-rest-tester)
