@@ -1,7 +1,7 @@
 {
   "name": "rxapi",
   "version": "0.0.18",
-  "description": "Generate fast API REST and WEBSOCKET for Dummy testing",
+  "description": "Generate fast memory API REST and WEBSOCKET",
   "main": "./bin/index.js",
   "bin": {
     "rxapi": "bin/index.js"
@@ -22,7 +22,7 @@
     "ws",
     "test"
   ],
-  "preferGlobal": "true",
+  "preferGlobal": true,
   "author": "Josep Subils Rigau <josep@spellbook.io> (http://spellbook.io)",
   "license": "MIT",
   "bugs": {
@@ -32,6 +32,6 @@
   "dependencies": {
     "argcon": "0.0.4",
     "gitclone": "^2.0.0",
-    "spellbook": "0.1.8"
+    "spellbook": "^0.1.22"
   }
 }

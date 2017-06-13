@@ -1,5 +1,5 @@
 # RxAPI
->Generate fast API REST and WEBSOCKET for Dummy testing
+>Generate fast memory API REST and WEBSOCKET
 >
 >https://warlock.gitbooks.io/rxapi/content/
 
