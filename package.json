@@ -1,6 +1,6 @@
 {
   "name": "rxapi",
-  "version": "0.0.18",
+  "version": "0.0.19",
   "description": "Generate fast memory API REST and WEBSOCKET",
   "main": "./bin/index.js",
   "bin": {
