@@ -1,6 +1,6 @@
 {
   "name": "rxapi",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "HTTP API REST and WEBSOCKET SERVER",
   "main": "./bin/index.js",
   "bin": {
