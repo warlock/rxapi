@@ -12,14 +12,18 @@ Usage:
   run            Run API server
   help           Show this message
 
+
+Documentation:
+https://warlock.gitbooks.io/rxapi/content
+
 ${pkg.license} License - Josep Subils Rigau <josep@spellbook.io>
 `)
 }
 
 arg.on('new', res => {
-  if (!sb.empty(sb.get(res, '0')) && sb.isString(res[0])) {
+  if (!sb.chain(res).isEmpty().Not().value() && sb.isString(res[0])) {
     console.log(`RxApi: Start downloading project in '${res[0]}' folder.`)
-    gitclone('warlock/nodejs-api-rest-tester', { dest: res[0] }, () => {
+    gitclone('warlock/api-template', { dest: res[0] }, () => {
       console.log(`RxApi: Successful download in '${res[0]}' folder`)
       const spawn = require('child_process').spawn
       const ex = spawn('npm', ['i'], { cwd : `./${res[0]}/`})
@@ -40,7 +44,7 @@ arg.on('new', res => {
   ------------------------
 
   Development documentation:
-  https://github.com/warlock/nodejs-api-rest-tester
+  https://warlock.gitbooks.io/rxapi/content
 
   ------------------------
 
