@@ -1,7 +1,7 @@
 {
   "name": "rxapi",
-  "version": "0.0.19",
-  "description": "Generate fast memory API REST and WEBSOCKET",
+  "version": "0.1.0",
+  "description": "HTTP API REST and WEBSOCKET SERVER",
   "main": "./bin/index.js",
   "bin": {
     "rxapi": "bin/index.js"
@@ -20,7 +20,11 @@
     "dummy",
     "testing",
     "ws",
-    "test"
+    "test",
+    "sqlite",
+    "mysql",
+    "postgresql",
+    "oracle"
   ],
   "preferGlobal": true,
   "author": "Josep Subils Rigau <josep@spellbook.io> (http://spellbook.io)",
@@ -28,10 +32,10 @@
   "bugs": {
     "url": "https://github.com/warlock/rxapi/issues"
   },
-  "homepage": "https://warlock.gitbooks.io/rxapi/content/",
+  "homepage": "https://warlock.gitbooks.io/rxapi/content",
   "dependencies": {
     "argcon": "0.0.4",
     "gitclone": "^2.0.0",
-    "spellbook": "^0.1.22"
+    "spellbook": "^0.1.23"
   }
 }
