@@ -21,7 +21,7 @@ ${pkg.license} License - Josep Subils Rigau <josep@spellbook.io>
 }
 
 arg.on('new', res => {
-  if (!sb.chain(res).isEmpty().Not().value() && sb.isString(res[0])) {
+  if (!sb.chain(res).get('0').isEmpty().Not().value() && sb.isString(res[0])) {
     console.log(`RxApi: Start downloading project in '${res[0]}' folder.`)
     gitclone('warlock/api-template', { dest: res[0] }, () => {
       console.log(`RxApi: Successful download in '${res[0]}' folder`)
