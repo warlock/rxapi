@@ -1,6 +1,6 @@
 {
   "name": "rxapi",
-  "version": "0.1.2",
+  "version": "0.1.3",
   "description": "HTTP API REST and WEBSOCKET SERVER",
   "main": "./bin/index.js",
   "bin": {
@@ -34,8 +34,8 @@
   },
   "homepage": "https://warlock.gitbooks.io/rxapi/content",
   "dependencies": {
-    "argcon": "0.0.4",
-    "gitclone": "^2.0.0",
-    "spellbook": "^0.1.23"
+    "chalk": "^2.0.1",
+    "commander": "^2.11.0",
+    "gitclone": "^2.0.0"
   }
 }
