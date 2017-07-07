@@ -4,9 +4,9 @@ const pro = require('commander')
 const pkg = require('../package.json')
 const chalk = require('chalk')
 const exec = require("child_process").exec
-const welcome = folder => `
+const welcome = (folder, version) => `
 
-  ${chalk.blue('RxAPi: ', chalk.green(pkg.version))} Instaled! Welcome!
+  ${chalk.blue(`RxAPi${version}: `, chalk.green(pkg.version))} Instaled! Welcome!
   ------------------------  
 
   Documentation:
@@ -25,14 +25,33 @@ pro
 
 pro
 .command('new <project>')
+.description('        HTTP & Websockets API base.')
 .action(project => {
   console.log(chalk.blue('RxAPi: ', chalk.green(pkg.version)))
-  console.log(`Start download in '${project}' folder.`)
+  console.log(chalk.green(`Start download in '${project}' folder.`))
   gitclone('warlock/api-template', { dest: project }, () => {
-    exec(`cd project && npm i`, (err, stdout, stderr) => {
+    console.log(chalk.green("Installing dependences"))
+    exec(`cd ${project} && npm i`, (err, stdout, stderr) => {
       if (err) console.error(err)
       else {
-        console.log(welcome())
+        console.log(welcome(project))
+      }
+    })
+  })
+})
+
+pro
+.command('dummy <project>')
+.description('        HTTP & Websockets DUMMY API for testing.')
+.action(project => {
+  console.log(chalk.blue('RxAPi: ', chalk.green(pkg.version)))
+  console.log(chalk.green(`Start download in '${project}' folder.`))
+  gitclone('warlock/api-template', { dest: project }, () => {
+    console.log(chalk.green("Installing dependences"))
+    exec(`cd ${project} && npm i`, (err, stdout, stderr) => {
+      if (err) console.error(err)
+      else {
+        console.log(welcome(project, " DUMMY"))
       }
     })
   })
@@ -40,6 +59,7 @@ pro
 
 pro
 .command('run')
+.description('        Start server.')
 .action(() => {
   exec("npm start", (err, stdout, stderr) => {
     if (err) console.error(err)
