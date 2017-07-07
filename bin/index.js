@@ -67,3 +67,5 @@ pro
 })
 
 pro.parse(process.argv)
+
+pro.help()
