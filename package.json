@@ -32,7 +32,7 @@
   "bugs": {
     "url": "https://github.com/warlock/rxapi/issues"
   },
-  "homepage": "https://warlock.gitbooks.io/rxapi/content",
+  "homepage": "https://warlock.gitbooks.io/rxapi",
   "dependencies": {
     "chalk": "^2.0.1",
     "commander": "^2.11.0",
