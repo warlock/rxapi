@@ -1,28 +1,37 @@
 # RxAPI
->Generate fast memory API REST and WEBSOCKET
+> HTTP API & WEB SOCKETS SERVER
 >
->https://warlock.gitbooks.io/rxapi/content/
+> https://warlock.gitbooks.io/rxapi
 
 ## Install
 ```sh
 sudo npm i rxapi -g
 ```
 
-## Start new api
-Download in folder and install the dependencies:
+## Install from npm
 ```sh
-rxapi new project
+sudo npm i rxapi -g
 ```
 
-## Run the api
-```sh
+## Make new api project:
+``sh
+rxapi new project
+cd project
 rxapi run
 ```
 
-## API DOCUMENTATION:
-[Documentation](https://warlock.gitbooks.io/rxapi/content/)
+## Generate a simple dummy API Restfull in memory for testing:
 
-[API Github](https://github.com/warlock/nodejs-api-rest-tester)
+``sh
+rxapi dummy project
+cd project
+rxapi run
+``sh
+```
+
+## DOCUMENTATION:
+[Documentation](https://warlock.gitbooks.io/rxapi)
+
 
 ## License
 The MIT License (MIT)
