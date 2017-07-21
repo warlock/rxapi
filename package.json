@@ -1,6 +1,6 @@
 {
   "name": "rxapi",
-  "version": "0.1.5",
+  "version": "0.1.6",
   "description": "HTTP API REST and WEBSOCKET SERVER",
   "main": "./bin/index.js",
   "bin": {
@@ -27,12 +27,12 @@
     "oracle"
   ],
   "preferGlobal": true,
-  "author": "Josep Subils Rigau <josep@spellbook.io> (http://spellbook.io)",
+  "author": "Josep Subils Rigau <js@js.gl> (http://js.gl)",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/warlock/rxapi/issues"
   },
-  "homepage": "https://warlock.gitbooks.io/rxapi",
+  "homepage": "https://rxapi.js.gl",
   "dependencies": {
     "chalk": "^2.0.1",
     "commander": "^2.11.0",

@@ -10,7 +10,7 @@ const welcome = (folder, version) => `
   ------------------------  
 
   Documentation:
-  https://warlock.gitbooks.io/rxapi
+  https://rxapi.js.gl
 
   ------------------------
 
