@@ -34,8 +34,8 @@
   },
   "homepage": "https://rxapi.js.gl",
   "dependencies": {
+    "argcon": "0.0.4",
     "chalk": "^2.0.1",
-    "commander": "^2.11.0",
-    "gitclone": "^2.0.0"
+    "simple-git": "^1.74.1"
   }
 }

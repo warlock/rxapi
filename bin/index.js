@@ -1,6 +1,6 @@
 #!/usr/bin/env node
-const gitclone = require('gitclone')
-const pro = require('commander')
+const git = require('simple-git')
+const arg = require('argcon')
 const pkg = require('../package.json')
 const chalk = require('chalk')
 const exec = require("child_process").exec
@@ -18,54 +18,75 @@ const welcome = (folder, version) => `
 
 `
 
-pro
-.version(
-  chalk.blue('RxAPi: ', chalk.green(pkg.version)) + '\n'
-)
+var help = () => {
+  console.log(`
+${chalk.blue('RxAPi: ', chalk.green(pkg.version))}
+Usage:
+  new [project_name]      Generate new project in new folder
+  dummy [project_name]    Generate new project in new folder
+  run                     Run API server
+  help                    Show this message
 
-pro
-.command('new <project>')
-.description('        HTTP & Websockets API base.')
-.action(project => {
-  console.log(chalk.blue('RxAPi: ', chalk.green(pkg.version)))
-  console.log(chalk.green(`Start download in '${project}' folder.`))
-  gitclone('warlock/api-template', { dest: project }, () => {
-    console.log(chalk.green("Installing dependences"))
-    exec(`cd ${project} && npm i`, (err, stdout, stderr) => {
-      if (err) console.error(err)
+
+Documentation:
+https://rxapi.js.gl
+
+  ${pkg.license} License - Josep Subils <js@js.gl>
+`)
+}
+
+arg.on('new', project => {
+  if (undefined !== project) {
+    console.log(chalk.blue('RxAPi: ', chalk.green(pkg.version)))
+    console.log(chalk.green(`Start downloading server in '${project}' folder.`))
+    git().clone('https://github.com/warlock/api-template.git', `./${project}`, err => {
+      if (err) console.log(err)
       else {
-        console.log(welcome(project))
+        console.log(chalk.green("Installing dependences"))
+        exec(`cd ${project} && npm i`, (err, stdout, stderr) => {
+          if (err) console.log(err)
+          else {
+            console.log(welcome(project))
+          }
+        })
       }
     })
-  })
+  }
 })
 
-pro
-.command('dummy <project>')
-.description('        HTTP & Websockets DUMMY API for testing.')
-.action(project => {
-  console.log(chalk.blue('RxAPi: ', chalk.green(pkg.version)))
-  console.log(chalk.green(`Start download in '${project}' folder.`))
-  gitclone('warlock/api-template', { dest: project }, () => {
-    console.log(chalk.green("Installing dependences"))
-    exec(`cd ${project} && npm i`, (err, stdout, stderr) => {
-      if (err) console.error(err)
+arg.on('dummy', project => {
+  if (undefined !== project) {
+    console.log(chalk.blue('RxAPi: ', chalk.green(pkg.version)))
+    console.log(chalk.green(`Start downloading dummy in '${project}' folder.`))
+    git().clone('https://github.com/warlock/nodejs-api-rest-tester.git', `./${project}`, err => {
+      if (err) console.log(err)
       else {
-        console.log(welcome(project, " DUMMY"))
+        console.log(chalk.green("Installing dependences"))
+        exec(`cd ${project} && npm i`, (err, stdout, stderr) => {
+          if (err) console.log(err)
+          else {
+            console.log(welcome(project))
+          }
+        })
       }
     })
-  })
+  }
 })
 
-pro
-.command('run')
-.description('        Start server.')
-.action(() => {
-  exec("npm start", (err, stdout, stderr) => {
+arg.on('help', () => {
+  help()
+})
+
+arg.on('run', () => {
+  exec(`npm start`, (err, stdout, stderr) => {
     if (err) console.error(err)
   })
 })
 
-pro.parse(process.argv)
+arg.on('version', () => {
+    console.log(chalk.blue('RxAPi: ', chalk.green(pkg.version)) + '\n')
+})
 
-pro.help()
+arg.alone(res => {
+  help()
+})
