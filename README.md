@@ -22,7 +22,7 @@ rxapi run
 
 ## Generate a simple dummy API Restfull in memory for testing:
 
-``sh
+```sh
 rxapi dummy project
 cd project
 rxapi run
