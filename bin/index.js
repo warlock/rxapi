@@ -84,7 +84,7 @@ arg.on('run', () => {
 })
 
 arg.on('version', () => {
-    console.log(chalk.blue('RxAPi: ', chalk.green(pkg.version)) + '\n')
+  console.log(chalk.blue('RxAPi: ', chalk.green(pkg.version)) + '\n')
 })
 
 arg.alone(res => {
