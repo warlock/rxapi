@@ -1,6 +1,6 @@
 {
   "name": "rxapi",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "HTTP API REST and WEBSOCKET SERVER",
   "main": "./bin/index.js",
   "bin": {
@@ -34,8 +34,8 @@
   },
   "homepage": "https://rxapi.js.gl",
   "dependencies": {
-    "argcon": "0.0.4",
-    "chalk": "^2.0.1",
-    "simple-git": "^1.74.1"
+    "argcon": "1.0.0",
+    "chalk": "^2.2.0",
+    "simple-git": "^1.80.1"
   }
 }
