@@ -43,7 +43,7 @@ arg.on('new', project => {
       if (err) console.log(err)
       else {
         console.log(chalk.green("Installing dependences"))
-        exec(`cd ${project} && npm i`, (err, stdout, stderr) => {
+        exec(`cd ${project} && npm i`, err => {
           if (err) console.log(err)
           else {
             console.log(welcome(project))
@@ -62,7 +62,7 @@ arg.on('dummy', project => {
       if (err) console.log(err)
       else {
         console.log(chalk.green("Installing dependences"))
-        exec(`cd ${project} && npm i`, (err, stdout, stderr) => {
+        exec(`cd ${project} && npm i`, err => {
           if (err) console.log(err)
           else {
             console.log(welcome(project))
@@ -78,7 +78,7 @@ arg.on('help', () => {
 })
 
 arg.on('run', () => {
-  exec(`npm start`, (err, stdout, stderr) => {
+  exec(`npm start`, err => {
     if (err) console.error(err)
   })
 })
@@ -87,6 +87,6 @@ arg.on('version', () => {
   console.log(chalk.blue('RxAPi: ', chalk.green(pkg.version)) + '\n')
 })
 
-arg.alone(res => {
+arg.alone(() => {
   help()
 })
