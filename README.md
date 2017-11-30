@@ -11,12 +11,12 @@ npx rxapi
 
 ### Create a new project
 ```sh
-npx rxapi new project
+npx rxapi -new project
 ```
 
 ### Create a new dummy
 ```sh
-npx rxapi dummy project
+npx rxapi -dummy project
 ```
 
 ## NPM
@@ -34,12 +34,12 @@ yarn global add
 ## Console RxAPI client
 ### Create a project
 ```sh
-rxapi new project
+rxapi -new project
 ```
 
 ### Create a dummy server
 ```sh
-rxapi dummy project
+rxapi -dummy project
 ```
 
 ## Download project server with Git

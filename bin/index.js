@@ -18,12 +18,12 @@ const welcome = (folder, version) => `
 
 `
 
-var help = () => {
+const help = () => {
   console.log(`
 ${chalk.blue('RxAPi: ', chalk.green(pkg.version))}
 Usage:
-  new [project_name]      Generate new project in new folder
-  dummy [project_name]    Generate new project in new folder
+  -new [project_name]      Generate new project in new folder
+  -dummy [project_name]    Generate new project in new folder
   run                     Run API server
   help                    Show this message
 
@@ -34,9 +34,11 @@ https://rxapi.js.gl
   ${pkg.license} License - Josep Subils <js@js.gl>
 `)
 }
+var working = false
 
-arg.on('new', project => {
+arg.on('-new', project => {
   if (undefined !== project) {
+    working = true
     console.log(chalk.blue('RxAPi: ', chalk.green(pkg.version)))
     console.log(chalk.green(`Start downloading server in '${project}' folder.`))
     git().clone('https://github.com/warlock/api-template.git', `./${project}`, err => {
@@ -54,8 +56,9 @@ arg.on('new', project => {
   }
 })
 
-arg.on('dummy', project => {
+arg.on('-dummy', project => {
   if (undefined !== project) {
+    working = true
     console.log(chalk.blue('RxAPi: ', chalk.green(pkg.version)))
     console.log(chalk.green(`Start downloading dummy in '${project}' folder.`))
     git().clone('https://github.com/warlock/nodejs-api-rest-tester.git', `./${project}`, err => {
@@ -73,20 +76,15 @@ arg.on('dummy', project => {
   }
 })
 
-arg.on('help', () => {
-  help()
-})
-
-arg.on('run', () => {
-  exec(`npm start`, err => {
-    if (err) console.error(err)
-  })
-})
-
-arg.on('version', () => {
-  console.log(chalk.blue('RxAPi: ', chalk.green(pkg.version)) + '\n')
-})
-
-arg.alone(() => {
-  help()
+arg.on(res => {
+  if (res.length < 3) {
+    if (!working) help()
+  } else {
+    if (res[2] === "run") {
+      exec(`npm start`, err => {
+        if (err) console.error(err)
+      })
+    } else if (res[2] === "version") console.log(chalk.blue('RxAPi: ', chalk.green(pkg.version)) + '\n')
+    else if (res[2] === "help") help()
+  }
 })
