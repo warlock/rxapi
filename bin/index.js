@@ -34,6 +34,7 @@ https://rxapi.js.gl
   ${pkg.license} License - Josep Subils <js@js.gl>
 `)
 }
+
 var working = false
 
 arg.on('-new', project => {
