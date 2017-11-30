@@ -7,3 +7,4 @@ pids
 .npm
 .node_repl_history
 node_modules
+package-lock.json
