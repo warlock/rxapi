@@ -81,7 +81,7 @@ arg.on(res => {
   if (res.length < 3) {
     if (!working) help()
   } else {
-    if (res[2] === "run") {
+    if (res[2] === "run" || res[2] === "start") {
       exec(`npm start`, err => {
         if (err) console.error(err)
       })
